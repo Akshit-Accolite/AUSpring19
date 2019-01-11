@@ -1,0 +1,12 @@
+//sql_commands
+//few commands that are not in dumb
+create table customer (
+	customer_name varchar(20) ,
+    custid integer(20) primary key auto_increment,
+    customer_rating integer(20)
+);
+ALTER TABLE customer modify customer_name varchar(30) ;	
+
+select * from app;
+
+ALTER TABLE app add constraint foreign key (custid) references customer(custid);
