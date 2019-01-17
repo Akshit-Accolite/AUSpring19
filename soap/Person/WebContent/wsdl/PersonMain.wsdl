@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://assignment.person.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://assignment.person.com" xmlns:intf="http://assignment.person.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://assignment.person.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="deletePerson">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="deletePersonResponse">
+    <complexType>
+     <sequence>
+      <element name="deletePersonReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readById">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readByIdResponse">
+    <complexType>
+     <sequence>
+      <element name="readByIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="readPerson">
+    <complexType/>
+   </element>
+   <element name="readPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="readPersonReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updatePerson">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="age" type="xsd:int"/>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updatePersonResponse">
+    <complexType>
+     <sequence>
+      <element name="updatePersonReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createNewPerson">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+      <element name="age" type="xsd:int"/>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="createNewPersonResponse">
+    <complexType>
+     <sequence>
+      <element name="createNewPersonReturn" type="impl:PersonClass"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="PersonClass">
+    <sequence>
+     <element name="age" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="deletePersonResponse">
+
+      <wsdl:part element="impl:deletePersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readPersonResponse">
+
+      <wsdl:part element="impl:readPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updatePersonRequest">
+
+      <wsdl:part element="impl:updatePerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updatePersonResponse">
+
+      <wsdl:part element="impl:updatePersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createNewPersonResponse">
+
+      <wsdl:part element="impl:createNewPersonResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readByIdRequest">
+
+      <wsdl:part element="impl:readById" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readByIdResponse">
+
+      <wsdl:part element="impl:readByIdResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="deletePersonRequest">
+
+      <wsdl:part element="impl:deletePerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="readPersonRequest">
+
+      <wsdl:part element="impl:readPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="createNewPersonRequest">
+
+      <wsdl:part element="impl:createNewPerson" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="PersonMain">
+
+      <wsdl:operation name="deletePerson">
+
+         <wsdl:input message="impl:deletePersonRequest" name="deletePersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:deletePersonResponse" name="deletePersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readById">
+
+         <wsdl:input message="impl:readByIdRequest" name="readByIdRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:readByIdResponse" name="readByIdResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readPerson">
+
+         <wsdl:input message="impl:readPersonRequest" name="readPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:readPersonResponse" name="readPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePerson">
+
+         <wsdl:input message="impl:updatePersonRequest" name="updatePersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updatePersonResponse" name="updatePersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createNewPerson">
+
+         <wsdl:input message="impl:createNewPersonRequest" name="createNewPersonRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:createNewPersonResponse" name="createNewPersonResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="PersonMainSoapBinding" type="impl:PersonMain">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="deletePerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="deletePersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="deletePersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readById">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="readByIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="readByIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="readPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="readPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="readPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updatePerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updatePersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updatePersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="createNewPerson">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="createNewPersonRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="createNewPersonResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="PersonMainService">
+
+      <wsdl:port binding="impl:PersonMainSoapBinding" name="PersonMain">
+
+         <wsdlsoap:address location="http://localhost:8080/Person/services/PersonMain"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
