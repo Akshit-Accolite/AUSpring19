@@ -1,0 +1,4 @@
+The database has two fields name and id
+getStudent will display all the students
+getStudent/id will display student by id
+/student to add the data in db
